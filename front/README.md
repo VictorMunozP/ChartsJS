@@ -5,8 +5,14 @@
 ## Build Setup
 
 ``` bash
+# install vuecli
+npm install -g vue-cli
+
+vue init webpack my-project
+
 # install dependencies
 npm install
+npm install chart.js chartkick hchs-vue-charts vue-chartjs vue-chartkick
 
 # serve with hot reload at localhost:8080
 npm run dev
