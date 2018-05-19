@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<!-- saved from url=(0077)https://s.codepen.io/SitePoint/fullembedgrid/dzoNxr?type=embed&animations=run -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  
+  <link rel="shortcut icon" type="image/x-icon" href="https://static.codepen.io/assets/favicon/favicon-8ea04875e70c4b0bb41da869e81236e54394d63638a1ef12fa558a4a835f1164.ico">
+  <link rel="mask-icon" type="" href="https://static.codepen.io/assets/favicon/logo-pin-f2d2b6d2c61838f7e76325261b7195c27224080bc099486ddd6dccb469b8e8e6.svg" color="#111">
+  <title>CodePen - vue-chartjs - reactive bar chart</title>
+  
+  
+  
+  <link rel="stylesheet prefetch" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.2/css/bulma.min.css">
+
+  
+  <script>
+  window.console = window.console || function(t) {};
+</script>
+
+  
+  
+  <script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+</script>
+
+
+</head>
+
+<body translate="no">
+
+  <div class="app"><h1>Bar Chart</h1> <div><iframe class="chartjs-hidden-iframe" tabindex="-1" style="display: block; overflow: hidden; border: 0px; margin: 0px; top: 0px; left: 0px; bottom: 0px; right: 0px; height: 100%; width: 100%; position: absolute; pointer-events: none; z-index: -1;" src="./saved_resource(14).html"></iframe><canvas id="bar-chart" width="960" height="519" style="display: block; height: 400px; width: 739px;"></canvas></div> <button class="button is-primary">Randomize</button></div>
+    <script src="./stopExecutionOnTimeout-b2a7b3fe212eaa732349046d8416e00a9dec26eb7fd347590fbced3ab38af52e.js"></script>
+
+  <script src="./vue.min.js"></script>
+<script src="./vue-chartjs.full.min.js"></script>
+
+  
+
+    <script>
+      Vue.component('reactive', {
+	extends: VueChartJs.Bar,
+	mixins: [VueChartJs.mixins.reactiveProp],
+	data: function data() {
+		return {
+			options: {
+				scales: {
+					yAxes: [{
+						ticks: {
+							beginAtZero: true
+						},
+						gridLines: {
+							display: true
+						}
+					}],
+					xAxes: [{
+						ticks: {
+							beginAtZero: true
+						},
+						gridLines: {
+							display: false
+						}
+					}]
+				},
+				legend: {
+					display: false
+				},
+				tooltips: {
+					enabled: true,
+					mode: 'single',
+					callbacks: {
+						label: function label(tooltipItems, data) {
+							return '$' + tooltipItems.yLabel;
+						}
+					}
+				},
+				responsive: true,
+				maintainAspectRatio: false,
+				height: 200
+			}
+		};
+	},
+	mounted: function mounted() {
+		// this.chartData is created in the mixin
+		this.renderChart(this.chartData, this.options);
+	}
+});
+
+var vm = new Vue({
+	el: '.app',
+	data: function data() {
+		return {
+			datacollection: null
+		};
+	},
+	created: function created() {
+		this.fillData();
+	},
+
+	methods: {
+		fillData: function fillData() {
+			this.datacollection = {
+				labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+				datasets: [{
+					label: 'Data One',
+					backgroundColor: '#f87979',
+					data: [this.getRandomInt(), this.getRandomInt(), this.getRandomInt(), this.getRandomInt(), this.getRandomInt(), this.getRandomInt(), this.getRandomInt(), this.getRandomInt(), this.getRandomInt(), this.getRandomInt(), this.getRandomInt(), this.getRandomInt()]
+				}]
+			};
+		},
+		getRandomInt: function getRandomInt() {
+			return Math.floor(Math.random() * (50 - 5 + 1)) + 5;
+		}
+	}
+});
+      //# sourceURL=pen.js
+    </script>
+
+
+
+  
+  
+
+
+
+
+ </body></html>

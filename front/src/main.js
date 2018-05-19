@@ -10,6 +10,13 @@ import 'hchs-vue-charts'
 Vue.use(window.VueCharts)
 //_------------------------------------------------
 
+//_-----------------vue-chartkick--------------------
+import Chartkick from 'chartkick'
+import VueChartkick from 'vue-chartkick'
+
+Vue.use(VueChartkick, { Chartkick })
+//-------------------------------------------------
+
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */

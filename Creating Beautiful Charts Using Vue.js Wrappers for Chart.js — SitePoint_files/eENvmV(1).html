@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<!-- saved from url=(0077)https://s.codepen.io/SitePoint/fullembedgrid/eENvmV?type=embed&animations=run -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  
+  <link rel="shortcut icon" type="image/x-icon" href="https://static.codepen.io/assets/favicon/favicon-8ea04875e70c4b0bb41da869e81236e54394d63638a1ef12fa558a4a835f1164.ico">
+  <link rel="mask-icon" type="" href="https://static.codepen.io/assets/favicon/logo-pin-f2d2b6d2c61838f7e76325261b7195c27224080bc099486ddd6dccb469b8e8e6.svg" color="#111">
+  <title>CodePen - vue-charts data binding</title>
+  
+  
+  
+  <link rel="stylesheet prefetch" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.2/css/bulma.min.css">
+
+      <style>
+      h1 {
+	text-align: center;
+	margin-top: 20px;
+	margin-bottom: 30px;
+}
+    </style>
+
+  <script>
+  window.console = window.console || function(t) {};
+</script>
+
+  
+  
+  <script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+</script>
+
+
+</head>
+
+<body translate="no">
+
+  <div id="app"><section class="container"><h1>Demo examples of vue-charts</h1> <div class="columns"><div class="column"><h3>Line Chart</h3> <div><iframe class="chartjs-hidden-iframe" tabindex="-1" style="width: 100%; display: block; border: 0px; height: 0px; margin: 0px; position: absolute; left: 0px; right: 0px; top: 0px; bottom: 0px;" src="./saved_resource(10).html"></iframe><canvas height="479" width="960" style="display: block; width: 739px; height: 369px;"></canvas></div></div> <div class="column"><h3>Bar Chart</h3> <div><iframe class="chartjs-hidden-iframe" tabindex="-1" style="width: 100%; display: block; border: 0px; height: 0px; margin: 0px; position: absolute; left: 0px; right: 0px; top: 0px; bottom: 0px;" src="./saved_resource(11).html"></iframe><canvas height="479" width="960" style="display: block; width: 739px; height: 369px;"></canvas></div></div></div> <div class="columns"><div class="column"><h3>Radar Chart</h3> <div><iframe class="chartjs-hidden-iframe" tabindex="-1" style="width: 100%; display: block; border: 0px; height: 0px; margin: 0px; position: absolute; left: 0px; right: 0px; top: 0px; bottom: 0px;" src="./saved_resource(12).html"></iframe><canvas height="479" width="960" style="display: block; width: 739px; height: 369px;"></canvas></div></div> <div class="column"><h3>Data Binding Line Chart</h3> <form><input placeholder="Add a Data"> <input placeholder="Add a Label"> <button type="submit">Submit</button></form> <div><iframe class="chartjs-hidden-iframe" tabindex="-1" style="width: 100%; display: block; border: 0px; height: 0px; margin: 0px; position: absolute; left: 0px; right: 0px; top: 0px; bottom: 0px;" src="./saved_resource(13).html"></iframe><canvas height="479" width="960" style="display: block; width: 739px; height: 369px;"></canvas></div></div></div></section></div>
+    <script src="./stopExecutionOnTimeout-b2a7b3fe212eaa732349046d8416e00a9dec26eb7fd347590fbced3ab38af52e.js"></script>
+
+  <script src="./vue.min.js"></script>
+<script src="./vue-chartjs.full.min.js"></script>
+<script src="./Chart.js"></script>
+<script src="./hchs-vue-charts@1.2.8"></script>
+
+  
+
+    <script>
+      Vue.use(VueCharts);
+var app = new Vue({
+  el: '#app',
+  data: function data() {
+    return {
+      dataentry: null,
+      datalabel: null,
+      labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+      dataset: [65, 59, 80, 81, 56, 55, 40]
+    };
+  },
+
+  methods: {
+    addData: function addData() {
+      this.dataset.push(this.dataentry);
+      this.labels.push(this.datalabel);
+      this.datalabel = '';
+      this.dataentry = '';
+    }
+  }
+});
+      //# sourceURL=pen.js
+    </script>
+
+
+
+  
+  
+
+
+
+
+ </body></html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<!-- saved from url=(0104)https://s.codepen.io/SitePoint/fullembedgrid/oeXZjO?type=embed&animations=run&forceRefresh=1526687440231 -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  
+  <link rel="shortcut icon" type="image/x-icon" href="https://static.codepen.io/assets/favicon/favicon-8ea04875e70c4b0bb41da869e81236e54394d63638a1ef12fa558a4a835f1164.ico">
+  <link rel="mask-icon" type="" href="https://static.codepen.io/assets/favicon/logo-pin-f2d2b6d2c61838f7e76325261b7195c27224080bc099486ddd6dccb469b8e8e6.svg" color="#111">
+  <title>CodePen - vue-chartkick demos</title>
+  
+  
+  
+  <link rel="stylesheet prefetch" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.2/css/bulma.min.css">
+
+      <style>
+      h1 {
+	text-align: center;
+	margin-top: 20px;
+	margin-bottom: 30px;
+}
+.container {
+	padding: 20px;
+}
+    </style>
+
+  <script>
+  window.console = window.console || function(t) {};
+</script>
+
+  
+  
+  <script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+</script>
+
+
+</head>
+
+<body translate="no">
+
+  <div id="app"><section class="container"><h1>Demo examples of vue-chartkick</h1> <div class="columns"><div class="column"><h3>Line Chart</h3> <div id="chart-1" style="height: 300px; line-height: 300px; width: 100%; text-align: center; color: rgb(153, 153, 153); font-size: 14px; font-family: &quot;Lucida Grande&quot;, &quot;Lucida Sans Unicode&quot;, Verdana, Arial, Helvetica, sans-serif;"><iframe class="chartjs-hidden-iframe" tabindex="-1" style="display: block; overflow: hidden; border: 0px; margin: 0px; top: 0px; left: 0px; bottom: 0px; right: 0px; height: 100%; width: 100%; position: absolute; pointer-events: none; z-index: -1;" src="./saved_resource(6).html"></iframe><canvas width="908" height="389" style="display: block; height: 300px; width: 699px;"></canvas></div></div> <div class="column"><h3>Bar Chart</h3> <div id="chart-2" style="height: 300px; line-height: 300px; width: 100%; text-align: center; color: rgb(153, 153, 153); font-size: 14px; font-family: &quot;Lucida Grande&quot;, &quot;Lucida Sans Unicode&quot;, Verdana, Arial, Helvetica, sans-serif;"><iframe class="chartjs-hidden-iframe" tabindex="-1" style="display: block; overflow: hidden; border: 0px; margin: 0px; top: 0px; left: 0px; bottom: 0px; right: 0px; height: 100%; width: 100%; position: absolute; pointer-events: none; z-index: -1;" src="./saved_resource(7).html"></iframe><canvas width="908" height="389" style="display: block; height: 300px; width: 699px;"></canvas></div></div></div> <div class="columns"><div class="column"><h3>Scatter Chart</h3> <div id="chart-3" style="height: 300px; line-height: 300px; width: 100%; text-align: center; color: rgb(153, 153, 153); font-size: 14px; font-family: &quot;Lucida Grande&quot;, &quot;Lucida Sans Unicode&quot;, Verdana, Arial, Helvetica, sans-serif;"><iframe class="chartjs-hidden-iframe" tabindex="-1" style="display: block; overflow: hidden; border: 0px; margin: 0px; top: 0px; left: 0px; bottom: 0px; right: 0px; height: 100%; width: 100%; position: absolute; pointer-events: none; z-index: -1;" src="./saved_resource(8).html"></iframe><canvas width="908" height="389" style="display: block; height: 300px; width: 699px;"></canvas></div></div> <div class="column"><h3>Downloadable Line Chart</h3> <div id="chart-4" style="height: 300px; line-height: 300px; width: 100%; text-align: center; color: rgb(153, 153, 153); font-size: 14px; font-family: &quot;Lucida Grande&quot;, &quot;Lucida Sans Unicode&quot;, Verdana, Arial, Helvetica, sans-serif; position: relative;"><iframe class="chartjs-hidden-iframe" tabindex="-1" style="display: block; overflow: hidden; border: 0px; margin: 0px; top: 0px; left: 0px; bottom: 0px; right: 0px; height: 100%; width: 100%; position: absolute; pointer-events: none; z-index: -1;" src="./saved_resource(9).html"></iframe><canvas width="908" height="389" style="display: block; height: 300px; width: 699px;"></canvas></div></div></div></section></div>
+    <script src="./stopExecutionOnTimeout-b2a7b3fe212eaa732349046d8416e00a9dec26eb7fd347590fbced3ab38af52e.js"></script>
+
+  <script src="./vue.min.js"></script>
+<script src="./Chart.bundle.js"></script>
+<script src="./chartkick@2.2.3"></script>
+<script src="./vue-chartkick@0.2.0"></script>
+
+  
+
+    <script>
+      Vue.use(VueChartkick);
+var app = new Vue({
+	el: '#app',
+	data: function data() {
+		return {
+			chartData: [['Jan', 44], ['Feb', 27], ['Mar', 60], ['Apr', 55], ['May', 37], ['Jun', 40], ['Jul', 69], ['Aug', 33], ['Sept', 76], ['Oct', 90], ['Nov', 34], ['Dec', 22]]
+		};
+	}
+});
+      //# sourceURL=pen.js
+    </script>
+
+
+
+  
+  
+
+
+
+
+ </body></html>
